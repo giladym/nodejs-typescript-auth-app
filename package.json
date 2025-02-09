@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/giladym/nodejs-typescript-auth-app#readme",
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.10.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
