@@ -4,6 +4,10 @@
   "description": "NodeJS with Typescript authentication application with Express and MongoDB",
   "main": "server.ts",
   "scripts": {
+    "dev": "nodemon server.ts", 
+    "start": "tsc & node dist/index.js",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,9 +27,13 @@
   },
   "homepage": "https://github.com/giladym/nodejs-typescript-auth-app#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mongoose": "^8.10.0"
+    "helmet": "^8.0.0",
+    "mongoose": "^8.10.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.9"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
