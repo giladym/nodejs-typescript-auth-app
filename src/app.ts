@@ -3,7 +3,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cors from "cors";
 
-import { notFoundMiddleware, errorHandlerMiddleware } from "./middlewares/index.middleware";
+import { ErrorHandlerMiddleware } from "./middlewares";
 import router from "./api/index.api";
 
 
@@ -16,7 +16,6 @@ app.use(express.json());
 
 app.use("/api", router);
 
-app.use(notFoundMiddleware);
-app.use(errorHandlerMiddleware);
+app.use(ErrorHandlerMiddleware);
 
 export default app;
