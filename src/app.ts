@@ -1,4 +1,3 @@
-import { config } from "dotenv";
 import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
@@ -8,7 +7,6 @@ import { notFoundMiddleware, errorHandlerMiddleware } from "./middlewares/index.
 import router from "./api/index.api";
 
 
-config();
 
 const app = express();
 app.use(morgan("dev"));
