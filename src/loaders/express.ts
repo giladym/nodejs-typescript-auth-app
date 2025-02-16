@@ -7,7 +7,7 @@ import ExpressMongoSanitize from "express-mongo-sanitize";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import { ErrorHandlerMiddleware } from "../middlewares";
-import router from "../api/index.api";
+import router from "../routes";
 import { errorHandler, successHandler } from "../config/morgan";
 
 

@@ -2,9 +2,9 @@
   "name": "nodejs-typescript-auth-app",
   "version": "1.0.0",
   "description": "NodeJS with Typescript authentication application with Express and MongoDB",
-  "main": "server.ts",
+  "main": "index.ts",
   "scripts": {
-    "dev": "nodemon server.ts",
+    "dev": "nodemon index.ts",
     "start": "tsc & node dist/index.js",
     "build": "tsc",
     "lint": "eslint . --ext .ts",
