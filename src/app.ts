@@ -8,13 +8,14 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import { ErrorHandlerMiddleware } from "./middlewares";
 import router from "./api/index.api";
-
+import { errorHandler, successHandler } from "./config/morgan";
 
 
 const app = express();
-app.use(morgan("dev"));
 
-
+app.use(successHandler);
+app.use(errorHandler);
+app.use(morgan("dev")); // logging HTTP requests in an Express.js server
 app.use(helmet()); // enhance security by setting various HTTP headers
     app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
     app.use(helmet.xssFilter());
@@ -31,7 +32,7 @@ app.use(ExpressMongoSanitize()); // sanitize user-supplied data to prevent Mongo
 app.use(cors(corsOptions)); // enable Cross-Origin Resource Sharing (CORS), which allows controlled access to resources located on a different origin domain
 
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true, limit: "30mb" }));\
+app.use(bodyParser.urlencoded({ extended: true, limit: "30mb" }));
 
 app.use(express.json());
 app.use("/api", router);
