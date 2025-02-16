@@ -1,18 +1,9 @@
+import { startServer } from "./src/loaders/server";
 
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
-import { env } from "./src/config/enviroment";
-import app from "./src/app";
-import { connectToMongoDB } from "./src/config/mongoose";
-
-connectToMongoDB();
-const port = env().port;
-
-app.listen(port, () => {
-    /* eslint-disable no-console */
-    console.log(`Server running on port ${port}`);
-    /* eslint-enable no-console */
-});
-
-app.use(bodyParser.json());
-app.use(cookieParser());
+startServer()
+    .then(() => {
+        console.log('Server started successfully');
+    })
+    .catch((error) => {
+        console.error('Error starting the server:', error);
+    });
