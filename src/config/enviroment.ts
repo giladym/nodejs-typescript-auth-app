@@ -1,5 +1,5 @@
 import dotenv, { config } from "dotenv";
-import { envSchema , Env } from "../validations/env.validation";
+import { envSchema , EnvConfig } from "../validations/env.validation";
 import { ZodError } from "zod";
 
 dotenv.config();
@@ -7,11 +7,16 @@ const envObj = config({ path: `./.env.${process.env.NODE_ENV}` }).parsed;
 
 export const env = () => {
     try {
-        const enviroment: Env = envSchema.parse(envObj);
+        const enviroment: EnvConfig = envSchema.parse(envObj);
         return {
             port: enviroment.PORT,
             nodeEnv: enviroment.NODE_ENV,
-            mongoDbUri: enviroment.MONGO_DB_URI
+            mongoDbUri: enviroment.MONGO_DB_URI,
+            jwtconfig: {
+                accessSecret: enviroment.JWT,
+                refreshaccessSecret: enviroment.JWT_REFRESH,
+            },
+            verificationExpires: enviroment.VERIFICATION_CODE_EXP
         }
     } catch (error) {
         if ( error instanceof ZodError) {

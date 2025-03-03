@@ -7,6 +7,7 @@ const ErrorMessage = {
     [ErrorCode.INVALID_PARAMS]: 'Invalid params provided',
     [ErrorCode.VALIDATION_ERROR]: 'Validation Error',
     [ErrorCode.CAST_ERROR]: 'Invalid data type provided',
+    [ErrorCode.ROLE_ALREADY_EXISTS]: 'Role already exists',
 
     // Unauthorized errors (401)
     [ErrorCode.INVALID_CREDENTIALS]: 'Unauthorized',
@@ -16,7 +17,9 @@ const ErrorMessage = {
     [ErrorCode.ACCESS_DENIED]: 'Forbidden',
 
     // Not Found errors (404)
-    [ErrorCode.RESOURCE_NOT_FOUND]: 'Not Found',
+    [ErrorCode.RESOURCE_NOT_FOUND]: 'Resource Not Found',
+    [ErrorCode.USER_NOT_FOUND]: 'User Not Found',
+    [ErrorCode.ROLE_NOT_FOUND]: 'Role Not Found',
 
     // Conflict errors (409)
     [ErrorCode.DUPLICATE_KEY_ERROR]: 'Conflict Error',

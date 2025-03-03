@@ -2,5 +2,6 @@ import BadRequestError from './badRequest.error'
 import ForbiddenError from './forbidden.error'
 import NotFoundError from './notFound.error'
 import InternalSeverError from './internalServer.error'
+import UnAuthenticatedError from './unAuthenticated.error'
 
-export { BadRequestError, ForbiddenError, NotFoundError, InternalSeverError};
+export { BadRequestError, ForbiddenError, NotFoundError, InternalSeverError, UnAuthenticatedError};
